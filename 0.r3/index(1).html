@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>IF COMPANY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+     
+    <meta name="od:title" content="IF COMPANY : mobile ">
+    <meta name="author" content="dig010@naver.com">
+    <meta name="subject" content="IF COMPANY in mobile">
+    <meta name="description" content="IF COMPANY 에서 제공하는 반응형 웹페이지 입니다.">
+    <meta name="keywords" content="IF COMPANY, 무료 디자인 템플릿, 유료 프리미엄">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        //주소창 자동닫힘.
+        window.addEventListener("load", function()
+                               {setTimeout(loaded, 100 );
+                               },false);
+        function loaded(){
+            window.scrollTo(0,1);
+            
+        }
+        //-->
+        
+    </script>
+    
+    <!--반사광이 없는 레티나(iphone)-->
+    <link href="./img/logo-57x57.png" rel="apple-touch-icon-precomposed"/>
+    <!--반사광이 있는 레티나(iphone)-->
+    <link href="./img/logo-72x72.png" rel="apple-touch-icon"/>
+    <!--iphone icon(레티나)-->
+    <link href="./img/logo-114x114.png" rel="apple-touch-icon"/>
+    <!--ipad icon(레티나)-->
+    <link href="./img/logo-114x114.png" rel="apple-touch-icon"/>
+    <!--안드로인드 png 유형-->
+    <link href="./img/logo-128x128.png" rel="shortcut icon"/>
+    <!--안드로인드 ico 유형-->
+    <link href="128x128logo.ico" rel="shortcut icon"/>
+    <!--또는, -->
+    <link href="128x128logo.ico" rel="shortcut icon" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="base.css">
+    
+    <style>
+        a{text-decoration: none;}
+        ul{list-style: none;}
+        
+        #container{width:100%; height:100%;}
+        #hd{position:fixed; left:10%; width:80%; height:50px; z-index: 90; padding-top:50px;}
+        
+        
+        #tnb{width:65%; height:100%; left:20%; margin:0 auto;}
+        .tnb_li{position:relative; width:25%; height:100%; float: left; line-height: 50px; }
+        .tnb_a{display:block; width:50%; height:100%; margin:0 auto; text-align: center; color:#333; font-size: 1.2rem; font-weight:600; z-index: 50;}
+        
+        .tnb_a:hover{border-bottom:3px solid #333;}
+        
+        .page{width:100%; height:100%; z-index: 30;}
+         
+        
+        
+        
+        #snb_left{position:fixed; width:20%; height:40%; top:30%; left:10%; z-index: 50;}
+        .sl_lb{outline: 0; display:block; border:0; width:50px; height:50px; background-color: rgba(0,0,0,0.5); text-align: center; z-index: 20;}
+        .rotate{display:block; width:100%; height:100%; font-size: 20px; line-height: 50px; color:#111; transform: rotateZ(45deg); transition: 1s; cursor: pointer;}
+        
+        .sl_txtbox{position:absolute; width:100%; height:100%; background-color:transparent; z-index: 10; transition:1s; }
+        #sl_ck:checked ~ .sl_txtbox{background-color:rgba(0,0,0,0.5);}
+        
+        
+        
+        .sl_semi{font-size:0.8rem; padding-left:5%; padding-top:5%; transition:1s;}
+        .sl_title{padding-left:5%; padding-top:5%; font-size: 1.5rem; transition:1s;}
+        .sl_comment{opacity:0; padding:5%; text-indent: 5px; transition:1s;}
+        
+        #sl_ck:checked ~ .sl_txtbox > .sl_comment{opacity: 1; color:#fff;}
+        #sl_ck:checked ~ .sl_txtbox > .sl_title{opacity: 1; color:#fff;}
+        #sl_ck:checked ~ .sl_txtbox > .sl_semi{opacity: 1; color:#fff;}
+        
+        .sl_ck{display:none;}
+        
+        #tnb_txB{display:none;}
+        .tnb_txB_lb{display:none;}
+        
+        
+        .sub_right{position:absolute; height:100%; width:10%; right:0; top:0; }
+        [class*="sr_btn"]{width:50px; height:50px; position:fixed; right:2%; z-index: 50; outline: 0; border:0; z-index: 70; background-image: url(./img/sr_ico_bl.png); background-size: 50px auto; background-repeat: no-repeat; cursor: pointer; transition:1s;}
+        .sr_btn1{top:2%; background-position:top;}
+        .sr_btn2{bottom:2%; background-position:bottom;}
+        [class*="sr_btn"]:hover{background-image: url(./img/sr_ico.png);}
+        
+        
+        #page2{position:relative; background-image: url(./img/vs_1.jpg);  background-size: 100% 100%; background-repeat: no-repeat;}
+        #page3{position:relative; background-image: url(./img/vs_2.jpg); background-size: 100% 100%; background-repeat: no-repeat;}
+        #page4{position:relative; background-image: url(./img/vs_3.jpg);  background-size: 100% 100%; background-repeat: no-repeat;}
+        
+        
+        
+        #imgBox1{width:100%; height:100%; z-index: 31;}
+        
+        [class*="popbox"]{position:absolute; top:25%; left:38%;  width:500px; height:500px; margin:0 auto; background-color:rgba(0,0,0,0.5); overflow: hidden; z-index: 60; z-index: 35; box-shadow: 40px 40px 0px #333;}
+        
+        
+        
+        [class*="txtBox"]{position:absolute; top:35%; padding:5%; width:800px; height:100px; margin:0 auto; opacity: 0; box-sizing: border-box; z-index: 35;}
+        .txtBox1{opacity: 0;}
+        .txtBox2{opacity: 0;}
+        .txtBox3{opacity: 0;}
+        
+        .title{width:100%; height:100%; position:absolute; top:10%; left:5%; color:#fff; font-size: 3.3rem; line-height: 4.2rem;}
+        
+        .comment{color:#fff;}
+        
+        [class*="pop_"]{position:absolute; top:30%; display:block; width:600px; height:auto;  }
+        
+        
+        [class*="infobox"]{opacity:0; position:absolute; width:150px; height:75px; background:#333; top:60%; left:22%;}
+        .info_btn{display:block; width:100%; height:100%; color:#fff; text-align: center; line-height: 75px; transition: 0.5s; font-size: 1.2rem;}
+        
+        .info_btn:hover{background-color:#eee; color:#333;}
+        
+        #imgBox2{width:100%; height:100%; }
+        
+        #imgBox3{width:100%; height:100%;}
+        
+        
+        @media screen and (max-width:767px){
+        
+            #tnb{position:fixed; width:100%; height:100%; top:0; left:-100%; z-index: 72; background:rgba(250,250,250,0.8); transition:1s;}
+            .tnb_ul{position:absolute; width:100%; height:80%; top:20%; left:0;}
+            .tnb_li{float: inherit; width:100%; height:20%; }
+            .tnb_a{ width:100%; height:100%; line-height: 4;}
+            
+            #tnb_txB{display:none;}
+            #snb_left{top:0; left:0; width:50px; height:50px;}
+            .tnb_txB_lb{display:block; position:fixed; top:0; left:0; width:50px; height:50px; background:rgba(0,0,0,0.5); padding:; box-sizing: border-box; z-index: 80;}
+            .rotate{display:block; width:100%; height:100%; font-size: 20px; line-height: 50px; color:#fff; transform: rotateZ(45deg); transition: 1s; cursor: pointer; text-align: center;}
+            
+            .tnb_lb{display: none;}
+            
+            #tnb_ck:checked ~ #tnb{left:0%;}
+            
+            .sl_semi{display:none;}
+            .sl_title{display:none;}
+            .sl_comment{display:none;}
+            .page{width:100%; height:100%; position:relative;}
+            [class*="popbox"]{position:absolute; width:80%; height:100%; box-shadow: 0px; top:0 left:0;}
+        }
+        
+        
+        
+        
+    </style>
+    <script>
+        window.onload = function(){
+           $(".scr").each(function(){
+               //개별적으로 Wheel 이벤트 적용
+               $(this).on("mousewheel DOMMouseScroll",function(e){
+                   e.preventDefault();
+                   var delta = 0;
+                   if (!event) event = window.event;
+                   if (event.wheelDelta) {
+                       delta = event.wheelDelta / 120;
+                       if (window.opera) delta = -delta;
+                   } else if (event.detail) delta = -event.detail / 3;
+                   var moveTop = null;
+                   //마우스 휠을 위에서 아래로
+                   if (delta < 0 ){
+                       if($(this).next() !=undefined){
+                           moveTop = $(this).next().offset().top;
+                       }
+                   }else {
+                       if($(this).prev() !=undefined){
+                           moveTop = $(this).prev().offset().top;
+                       }
+                   }
+                   //화면 이동 0.8초
+                   $("html,body").stop().animate({scrollTop : moveTop+"px"},{duration : 800, complete: function(){}
+                });
+               });
+           });
+       };
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        $(function(){
+            
+            $(".tnb_txB_lb").click(function(){
+                if($("#tnb_ck").is(":checked"))
+                { $(".rotate").css("transform","rotateZ(-45deg)");
+                  
+                }else {
+                    $(".rotate").css("transform","rotateZ(0deg)");
+                }
+            });
+            
+            
+            
+            
+            
+            $(".sl_lb").click(function(){
+                if($("#sl_ck").is(":checked"))
+                { $(".rotate").css("color","#111").css("transform","rotateZ(-45deg)");
+                  
+                }else {
+                    $(".rotate").css("color","#fff").css("transform","rotateZ(0deg)");
+                }
+            });
+            
+        $(".popbox1").mouseover(function(){
+            $(".popbox1").clearQueue().stop(true,false).animate({"width":"800px","left":"32.5%"},500);
+            
+            $(".txtBox1").delay(1000).css("opacity","1");
+            $(".infobox1").delay(500).css("opacity","1");
+            $(".t_br").css("display","none");
+            $(".pop_1").clearQueue().stop(true,false).delay(300).animate({"left":"30%"},500);
+        });
+            
+        $(".popbox1").mouseout(function(){
+            $(".popbox1").clearQueue().stop(true,false).animate({"width":"500px","left":"38%"},500 );
+            $(".txtBox1").css("opacity","0");
+            $(".infobox1").css("opacity","0");
+            $(".t_br").css("display","block");
+            $(".pop_1").clearQueue().stop(true,false).animate({"left":"0%"},500);
+        });
+            
+        
+        $(".popbox2").mouseover(function(){
+            $(".popbox2").clearQueue().stop(true,false).animate({"width":"800px","left":"32.5%"},500);
+            $(".txtBox2").delay(1000).css("opacity","1");
+            $(".infobox2").delay(500).css("opacity","1");
+            $(".t_br").css("display","none");
+            $(".pop_2").clearQueue().stop(true,false).delay(300).animate({"left":"30%"},500);
+        });
+            
+        $(".popbox2").mouseout(function(){
+            $(".popbox2").clearQueue().stop(true,false).animate({"width":"500px","left":"38%"},500 );
+            
+            $(".txtBox2").css("opacity","0");
+            $(".infobox2").css("opacity","0");
+            $(".t_br").css("display","block");
+            $(".pop_2").clearQueue().stop(true,false).animate({"left":"0%"},500);
+        });
+            
+            
+            
+        $(".popbox3").mouseover(function(){
+            $(".popbox3").clearQueue().stop(true,false).animate({"width":"800px","left":"32.5%"},500);
+            
+            $(".txtBox3").delay(1000).css("opacity","1");
+            $(".infobox3").delay(500).css("opacity","1");
+            $(".t_br").css("display","none");
+            $(".pop_3").clearQueue().stop(true,false).delay(300).animate({"left":"30%"},500);
+        });
+            
+        $(".popbox3").mouseout(function(){
+            $(".popbox3").clearQueue().stop(true,false).animate({"width":"500px","left":"38%"},500 );
+            
+            $(".txtBox3").css("opacity","0");
+            $(".infobox3").css("opacity","0");
+            $(".t_br").css("display","block");
+            $(".pop_3").clearQueue().stop(true,false).animate({"left":"0%"},500);
+        });
+           
+        });
+    </script>
+    
+</head>
+<body>
+   <div id="container">
+       <header id="hd">
+         
+           <a href="" class="logo"></a>
+           <input type="checkbox" id="tnb_ck" class="sl_ck">
+            <label for="tnb_ck" class="tnb_txB_lb">
+                <span class="rotate">&#9932;</span>
+            </label>
+           
+           <nav id="tnb">
+             
+              
+               <ul class="tnb_ul">
+                   <li class="tnb_li"><a href="sub1_1.html" class="tnb_a">기업소개</a></li>
+                   <li class="tnb_li"><a href="sub1_2.html" class="tnb_a">프리미엄</a></li>
+                   <li class="tnb_li"><a href="sub1_3.html" class="tnb_a">고객문의</a></li>
+                   <li class="tnb_li"><a href="sub1_4.html" class="tnb_a">디자인 연구소</a></li>
+               </ul>
+               
+                
+               
+               <aside id="tnb_txB">
+              
+                       <h3 class="tnb_txB_semi">Download Design Source</h3>
+                       <h1 class="tnb_txB_title">디자인 요소를 한곳에!<br/>무료 디자인 소스 오픈</h1>
+                       <p class="tnb_txB_comment">트렌드한 디자인 소스를 무료로 다운받아 보실 수 있습니다.<br/><br/> 그래픽, 이미지, 아이디어 소스 등 다양한 디자인 요소를 만나보세요.</p>
+                  
+           </aside>
+               
+           </nav>
+         
+       </header>
+       
+       
+           <aside id="snb_left">
+              <input type="checkbox" id="sl_ck" class="sl_ck">
+              
+               
+              
+                   <div class="sl_txtbox">
+                      <label for="sl_ck" class="sl_lb">
+                           <span class="rotate">&#9932;</span>
+                       </label>
+                      
+                       <h3 class="sl_semi">Download Design Source</h3>
+                       <h1 class="sl_title">디자인 요소를 한곳에!<br/>무료 디자인 소스 오픈</h1>
+                       <p class="sl_comment">트렌드한 디자인 소스를 무료로 다운받아 보실 수 있습니다.<br/><br/> 그래픽, 이미지, 아이디어 소스 등 다양한 디자인 요소를 만나보세요.</p>
+                   </div>
+                   
+               
+           </aside>
+           
+           
+           <aside id="snb_right">
+               <a class="sr_btn1">
+                   <i class="fas fa-map-marker-alt"></i>
+               </a>
+               <a class="sr_btn2">
+                   <span class="glyphicons glyphicons-shoe-steps"></span>
+               </a>
+               <div class="lineBox">
+                   <span class="sr_line"></span>
+                   <span class="sr_line"></span>
+                   <span class="sr_line"></span>
+               </div>
+           </aside>
+      
+       
+          
+        <section id="page2" class="page scr">
+           <div id="imgBox1">
+              <div class="popbox1">
+                  
+                  <img src="./img/vs_pop1.png" alt="" class="pop_1">
+                  <h1 class="title">디자이너가<br class="t_br"/> 행복해야<br/>아름다운 디자인이<br class="t_br"/> 나옵니다.</h1>
+                  
+               <div class="txtBox1">
+                               
+                  <span class="line2"></span>
+                               <h4 class="comment">
+                               폭풍 야근, 저녁 없는 삶으로 힘들었던 아련한 디자이너들이여, 눈을 떠라
+                                </h4>
+                </div>
+                   
+                <div class="infobox1">
+                   <a href="" class="info_btn">GO&nbsp;&#8690;</a>
+                   
+                </div>
+                    
+                              
+              </div>
+              
+              
+           </div>
+       </section>
+       
+       
+       <section id="page3" class="page scr">
+        <div id="imgBox2">
+          
+           <div class="popbox2">
+                  
+                  <img src="./img/vs_pop1.png" alt="" class="pop_2">
+                  <h1 class="title">아름답고,<br class="t_br"/> 실용적인<br/>디자인 소스</h1>
+                  
+             
+                    
+                           
+            <div class="txtBox2">
+                
+                <span class="line2"></span>
+                <h4 class="comment">
+                백방 아름 다워봤자 쓰이지 못하면 그저 데이터의 하나가 되죠. <br/> 심미성과 경제성 두마리 토끼를 잡아 칼퇴 찍어봅시다.
+                </h4>
+            </div>
+            
+            <div class="infobox2">
+                   <a href="" class="info_btn">GO&nbsp;&#8690;</a>
+                   
+            </div>
+                 
+            </div>
+          
+           
+           </div>
+            
+       </section>
+       
+       
+       <section id="page4" class="page scr">
+        <div id="imgBox3">
+          
+           <div class="popbox3">
+                  
+                  <img src="./img/vs_pop1.png" alt="" class="pop_3">
+                  <h1 class="title">2018년도<br class="t_br"/> 지나면<br/>유료로 <br class="t_br"/> 바뀝니다.</h1>
+                  
+              <div class="txtBox3">
+                
+                <span class="line2"></span>
+                <h4 class="comment">
+                어서 와서 담아가주세요. 나의 피, 땀, 눈물의 디자인 소스를..
+                </h4>
+                </div>
+                
+                <div class="infobox3">
+                   <a href="" class="info_btn">GO&nbsp;&#8690;</a>
+                   
+                </div>      
+              </div>
+          
+              
+           
+           </div>
+            
+       </section>
+       
+       
+       <!--<section id="ft" class="page">
+           
+           
+           <div class="ftWrap">
+             <a href="" class="ft_logo"></a>
+              
+               <div id="ft_1st">
+                   <ul>
+                       <li class="ft_li1"><a href="" class="ft_a">인재채용</a></li>
+                       <li class="ft_li1"><a href="" class="ft_a">개인정보처리방침</a></li>
+                       <li class="ft_li1"><a href="" class="ft_a">이메일 무단수집거부</a></li>
+                       <li class="ft_li1"><a href="" class="ft_a">이용약관</a></li>
+                   </ul>
+               </div>
+               
+               <div id="ft_2nd">
+                   <span class="copyright">
+                   copyright &#169; 2016 IF Company korea. all right reserved. 
+                   </span>
+                   
+               </div>
+           </div>
+       </section>-->
+       
+   </div>
+    
+</body>
+</html>
